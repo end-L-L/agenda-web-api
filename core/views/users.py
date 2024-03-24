@@ -70,8 +70,8 @@ class RegisterView(generics.CreateAPIView):
             profile = Profiles.objects.create(user=user, 
                                               identifier=request.data["identifier"], 
                                               job=request.data["job"], 
-                                              start_date=request.data["start_date"], 
-                                              end_date=request.data["end_date"])
+                                              start_time=request.data["start_time"], 
+                                              end_time=request.data["end_time"])
             profile.save()
 
             return Response({"profile_created_id": profile.id }, 201)
