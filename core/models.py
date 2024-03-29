@@ -38,6 +38,7 @@ class Contacto_Personal(models.Model):
     relationship = models.CharField(max_length=255,null=True, blank=True)
     update = models.DateTimeField(null=True, blank=True)
     creation = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False, default=None)
 
     def __str__(self):
         return "Contacto Personal: "+ "ID: " +self.id+" Name: "+self.name

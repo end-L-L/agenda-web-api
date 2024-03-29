@@ -18,6 +18,7 @@ urlpatterns = [
     path('logout/', auth.Logout.as_view()),    
     # Register Personal Contact
     path('register-personal-contact/', contact_register.PersonalContactRV.as_view()),
-    # Register Business Contact
-    #path('register-bc/', users.BusinessContactView.as_view()),
+    # Edit Personal Contact
+    path('edit-personal-contact/', contact_register.PersonalContactEV.as_view()),
 ]
+

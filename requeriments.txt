@@ -10,4 +10,3 @@ django-rest-auth
 cryptography
 python-dateutil
 google-cloud-storage
-django-environ
