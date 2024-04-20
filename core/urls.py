@@ -12,6 +12,8 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/admin/', permanent=True)),
     # Create User
     path('register/', users.RegisterView.as_view()),
+    # Get User by ID
+    path('profile/', users.RegisterView.as_view()),
     # Login
     path('token/', auth.CustomAuthToken.as_view()),
     # Logout

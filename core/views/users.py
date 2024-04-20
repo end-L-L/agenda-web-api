@@ -30,6 +30,13 @@ from django.utils.dateparse import parse_date
 
 class RegisterView(generics.CreateAPIView):
 
+    # Obtener Usuario por ID
+    def get(self, request, *args, **kwargs):
+        user = get_object_or_404(Profiles, id = request.GET.get("id"))
+        user = ProfilesSerializer(user, many=False).data
+        
+        return Response(user, 200)
+
     @transaction.atomic
     def post(self, request, *args, **kwargs):
 
