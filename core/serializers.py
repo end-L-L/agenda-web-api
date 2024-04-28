@@ -20,5 +20,10 @@ class ProfilesSerializer(serializers.ModelSerializer):
 
 class PersonalContactSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Contacto_Personal
+        model = Personal_Contact
+        fields = "__all__"
+
+class BusinessContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Business_Contact
         fields = "__all__"
