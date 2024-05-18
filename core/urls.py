@@ -5,6 +5,7 @@ from .views import users
 from .views import auth
 from .views import personal_contact_directory as personal_contact
 from .views import business_contact_directory as business_contact
+from .views import full_calendar as full_calendar
 
 urlpatterns = [
     # Admin
@@ -41,5 +42,16 @@ urlpatterns = [
     path('delete-business-contact/', business_contact.BusinessContactEV.as_view()),
     # All Business Contacts by User
     path('list-business-contacts/', business_contact.BusinessContactByUser.as_view()),
+    
+    # Full Calendar
+    
+    # Register Event
+    path('register-event/', full_calendar.AgendaRegisterView.as_view()),
+    # List Events
+    path('list-events/', full_calendar.TasksByUser.as_view()),
+    # List Contact Names
+    path('contact-names/', full_calendar.ContactNamesByUser.as_view()),
+    # Delete Event
+    path('delete-event/', full_calendar.AgendaRegisterView.as_view())
 ]
 

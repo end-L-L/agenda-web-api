@@ -60,3 +60,19 @@ class Business_Contact(models.Model):
 
     def __str__(self):
         return "Contacto Empresarial: "+ "ID: " +self.id+" Name: "+self.name
+    
+class Agenda(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(max_length=255,null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
+    start = models.CharField(max_length=255,null=True, blank=True)
+    end = models.CharField(max_length=255,null=True, blank=True)
+    partner = models.CharField(max_length=255,null=True, blank=True)
+    place = models.CharField(max_length=255,null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    creation = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    update = models.DateTimeField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False, default=None)
+
+    def __str__(self):
+        return "Agenda: "+ "ID: " +self.id+" Title: "+self.title

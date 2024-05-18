@@ -27,3 +27,16 @@ class BusinessContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Business_Contact
         fields = "__all__"
+        
+class TaskSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    title = serializers.CharField(required=True)
+    class Meta:
+        model = Agenda
+        fields = ('id','title')
+        
+class AgendaSerializer(serializers.ModelSerializer):
+    task = TaskSerializer(read_only=True)
+    class Meta:
+        model = Agenda
+        fields = "__all__"
